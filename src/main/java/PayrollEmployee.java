@@ -1,4 +1,4 @@
-public class PayrollEmployee {
+public abstract class PayrollEmployee {
 
     // create fields
     private int employeeID;
@@ -7,11 +7,10 @@ public class PayrollEmployee {
     protected double paycheckTotal;
 
     // create constructor
-    public PayrollEmployee(int employeeID, String firstName, String lastName, double paycheckTotal) {
+    public PayrollEmployee(int employeeID, String firstName, String lastName) {
         this.employeeID = employeeID;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.paycheckTotal = paycheckTotal;
     }
 
     // create getter methods
@@ -34,4 +33,7 @@ public class PayrollEmployee {
     // Methods
 //    void access;
 //    void setPaycheckTotal;
+
+    public abstract void setPaycheckTotal();
+
 }

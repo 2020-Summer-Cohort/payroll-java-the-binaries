@@ -1,12 +1,23 @@
-public abstract class PayrollDeveloper extends PayrollEmployee implements Bonus{
+public class PayrollDeveloper extends PayrollEmployee implements Bonus,Insurance{
 
-    public PayrollDeveloper(int employeeID, String firstName, String lastName, double paycheckTotal) {
-        super(employeeID, firstName, lastName, paycheckTotal);
+    public PayrollDeveloper(int employeeID, String firstName, String lastName) {
+        super(employeeID, firstName, lastName);
     }
 
+    @Override
+    public void setPaycheckTotal() {
+        paycheckTotal = payPeriodEarnings;
+    }
+
+    @Override
     public void payInsurance() {
-        double insurance = 80;
+        paycheckTotal -= 80;
     }
 
     double payPeriodEarnings = 9000;
+
+    @Override
+    public void receiveBonus(double bonus) {
+        paycheckTotal += bonus;
+    }
 }
